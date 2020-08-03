@@ -1,0 +1,4 @@
+export const calcTypes = {
+  MODULE_TO_DECIMAL: 'MODULE_TO_DECIMAL',
+  DECIMAL_TO_MODULE: 'DECIMAL_TO_MODULE'
+}

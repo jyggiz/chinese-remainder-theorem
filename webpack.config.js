@@ -12,6 +12,12 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
+    alias: {
+      components: path.resolve(__dirname, "src/components/"),
+      models: path.resolve(__dirname, "src/model/"),
+      hooks: path.resolve(__dirname, "src/hooks/"),
+      helpers: path.resolve(__dirname, "src/helpers")
+    }
   },
   module: {
     rules: [

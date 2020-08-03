@@ -1,14 +1,25 @@
 import * as React from "react";
 
-interface HelloWorldProps {
-  userName: string;
-  lang: string;
-}
+import Form from '../components/form'
+import Switch from '../components/switch'
 
-const App = (props: HelloWorldProps) => (
-  <h1>
-    Hi {props.userName} from React! Welcome to {props.lang}!
-  </h1>
-);
+import { calcTypes } from '../constants'
+
+export const CalcContext = React.createContext(calcTypes.MODULE_TO_DECIMAL)
+
+const App = () => {
+  const [calcType, setCalcType] = React.useState(calcTypes.MODULE_TO_DECIMAL)
+
+  const handleSwitch = (calcType: string) => {
+    setCalcType(calcType)
+  }
+
+  return (
+    <CalcContext.Provider value={calcType}>
+      <Switch onSwitch={handleSwitch}/>
+      <Form />
+    </CalcContext.Provider>
+  )
+};
 
 export default App;
