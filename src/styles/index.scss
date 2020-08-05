@@ -1,0 +1,12 @@
+@import "reset";
+@import "mixins";
+
+html, body {
+	height: 100%;
+	min-width: 100vw;
+}
+
+#app {
+	height: 100%;
+	@include flexCenter;
+}

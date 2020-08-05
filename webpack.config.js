@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const AutoPrefixer = require("autoprefixer");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -31,10 +32,21 @@ module.exports = {
         loader: "source-map-loader",
       },
       {
-        test: /\.css$/,
-        loader: "css-loader",
-      },
-    ],
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: [AutoPrefixer()],
+              sourceMap: true
+            }
+          },
+          "sass-loader"
+        ]
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({

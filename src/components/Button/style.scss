@@ -1,0 +1,25 @@
+@import '../../styles/colors';
+
+button {
+  border: $blackBorder;
+  border-radius: 5px;
+  background: $black;
+  margin: $defaultMargin;
+  padding: 10px;
+  color: $white;
+  cursor: pointer;
+
+  &.switch {
+    border-radius: 0
+  }
+
+  &.active {
+    font-weight: 600;
+    padding: 10px 7px;
+    background: $white;
+    border: $blackBorder;
+    color: $black;
+    transition: all 0.5s ease-in-out;
+  }
+}
+

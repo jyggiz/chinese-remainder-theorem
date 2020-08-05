@@ -1,10 +1,11 @@
 import * as React from 'react'
 
-import { List, LeftOverList } from '../model'
+import { LeftOverList, GroundList } from '../model'
 
 export function useGrounds () {
   const [grounds, setGrounds] = React.useState([]);
-  const Ground = new List(grounds, setGrounds)
+  const multiplies = React.useRef([])
+  const Ground = new GroundList(grounds, setGrounds, multiplies.current)
 
   return Ground
 }

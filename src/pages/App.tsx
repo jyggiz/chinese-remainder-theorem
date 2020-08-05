@@ -2,10 +2,9 @@ import * as React from "react";
 
 import Form from '../components/form'
 import Switch from '../components/switch'
-
 import { calcTypes } from '../constants'
 
-export const CalcContext = React.createContext(calcTypes.MODULE_TO_DECIMAL)
+import './style.scss'
 
 const App = () => {
   const [calcType, setCalcType] = React.useState(calcTypes.MODULE_TO_DECIMAL)
@@ -15,10 +14,15 @@ const App = () => {
   }
 
   return (
-    <CalcContext.Provider value={calcType}>
-      <Switch onSwitch={handleSwitch}/>
-      <Form />
-    </CalcContext.Provider>
+      <div id="container">
+        <Switch 
+          onSwitch={handleSwitch}
+          calculationType={calcType}
+        />
+        <Form 
+          calculationType={calcType}
+        />
+      </div>
   )
 };
 

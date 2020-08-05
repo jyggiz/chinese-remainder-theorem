@@ -1,0 +1,33 @@
+@import '../../styles/mixins';
+@import '../../styles/colors';
+
+#form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+
+  .error {
+    color: $red;
+    width: 80%;
+    height: 30px;
+    margin-bottom: 10px;
+    align-self: center;
+    text-align: center;
+
+    @media (max-width: 700px) {
+      & {
+        height: 50px;
+      }
+    }
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .form-action {
+    @include flexColumnCenter();
+  }
+}
