@@ -1,4 +1,4 @@
-# dar-project
+# Dar-project
 ## For start Project in dev mode
 For start project use this command, required node v12
 ```
